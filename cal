@@ -6,12 +6,12 @@ executor = ThreadPoolExecutor(max_workers=2)
 def calculate():
     try:
         expression = entry.get()
-        future = executor.submit(eval, expression)  # ใช้ ThreadPoolExecutor คำนวณ
+        future = executor.submit(eval, expression)  
         result.set(future.result())
     except Exception as e:
         result.set("Error")
 
-# สร้าง GUI ด้วย Tkinter
+
 root = tk.Tk()
 root.title("Async Calculator")
 
